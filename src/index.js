@@ -11,18 +11,12 @@ function App() {
     <div
       className="App"
       style={(() => {
-        const randomBackgroundColor = generateRandomColor();
-        const foregroundColor = invert(randomBackgroundColor, {
-          black: "#3a3a3a",
-          white: "#fafafa"
-        });
         return {
           height: "100vh",
+          width: "100%",
           display: "flex",
           flexDirection: "column",
-          justifyContent: "center",
-          background: randomBackgroundColor,
-          color: foregroundColor
+          justifyContent: "center"
         };
       })()}
     >

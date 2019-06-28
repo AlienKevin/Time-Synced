@@ -4,7 +4,9 @@
   text-align: center;
 }
 html,
-body {
+body,
+div#root {
   margin: 0;
   padding: 0;
+  width: 100%;
 }

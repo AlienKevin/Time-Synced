@@ -1,25 +1,24 @@
 import React from "react";
 import TimezoneRow from "./TimezoneRow";
 import moment from "moment-timezone";
+import { generateSteppedColor } from "../utils";
 
 function TimezoneGrid() {
   return (
     <div
       style={{
-        maxWidth: "400px",
-        display: "grid",
-        gridTemplateColumns: "auto auto auto",
-        gridColumnGap: "2rem",
-        gridRowGap: "1rem",
+        display: "flex",
+        flexDirection: "column",
         margin: "auto",
-        fontSize: "1.2rem"
+        fontSize: "1.2rem",
+        width: "100%"
       }}
     >
-      <TimezoneRow tz={moment.tz.guess()} />
-      <TimezoneRow tz={"Asia/Shanghai"} />
-      <TimezoneRow tz={"Asia/Tokyo"} />
-      <TimezoneRow tz={"Europe/Berlin"} />
-      <TimezoneRow tz={"Europe/London"} />
+      <TimezoneRow bg={generateSteppedColor(100, 10)} tz={moment.tz.guess()} />
+      <TimezoneRow bg={generateSteppedColor(100, 90)} tz={"Asia/Shanghai"} />
+      <TimezoneRow bg={generateSteppedColor(100, 20)} tz={"Asia/Tokyo"} />
+      <TimezoneRow bg={generateSteppedColor(100, 60)} tz={"Europe/Berlin"} />
+      <TimezoneRow bg={generateSteppedColor(100, 50)} tz={"Europe/London"} />
     </div>
   );
 }
